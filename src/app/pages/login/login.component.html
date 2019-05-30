@@ -1,0 +1,42 @@
+<div class="logincontainer">
+<ion-grid padding-top style="margin: auto" >
+  <ion-row justify-content-center  >
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <form (ngSubmit)="login()">
+        <div text-center>
+          <img margin-bottom="2em" src="./assets/svg/vneuron_icon.png" width="20%">
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-label [color]="'dark'" position="floating">Email</ion-label>
+            <ion-input   (ionFocus)="wrongCred = false"   [(ngModel)]="logininfo.user_name"  [name]="'username'" [inputmode]="'email'"  [clearInput]="true"
+                         [ngClass]="{'wrong-cred': wrongCred}"        [autocomplete]="'on'" [type]="'text'"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label  [color]="'dark'" position="floating">Mot de passe</ion-label>
+            <ion-input (ionFocus)="wrongCred = false"    [ngClass]="{'wrong-cred': wrongCred}"   [inputmode]="'password'" [clearInput]="true" [type]="'password'" [name]="'password'" [(ngModel)]="logininfo.password" ></ion-input>
+          </ion-item>
+          <div  *ngIf="wrongCred"  class="ion-margin-top ion-text-center ion-padding-top">
+            <ion-text color="danger" >
+              Wrong credentials
+            </ion-text>
+          </div>
+
+        </div>
+
+        <div padding >
+          <ion-button type="submit"   [strong]="true" [fill]="'solid'"  [color]="'light'" size="large"  expand="block" >
+            <ion-ripple-effect ></ion-ripple-effect>
+            se connecter
+          </ion-button>
+
+          <ion-button float-end=""  padding  [strong]="true" [fill]="'clear'"  [color]="'dark'" [expand]="'block'">
+            Mot de pass oublié ?
+          </ion-button>
+        </div>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>

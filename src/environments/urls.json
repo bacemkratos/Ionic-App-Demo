@@ -1,0 +1,4 @@
+{
+  "base_url": "http://localhost/extranet-portal/",
+  "auth_url": "xauth/authenticate/"
+}

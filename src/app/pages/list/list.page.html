@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Pages
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row align-items-center justify-content-start>
+    <ion-col [sizeSm]="12" [sizeXs]="12" [sizeMd]="6" [sizeLg]="4" [sizeXl]="3" *ngFor="let item of items">
+      <ion-card (click)="viewPage(item.form , item.title)" >
+        <ion-card-header text-center color="light">
+          <ion-card-title>{{item.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content padding align-items-center justify-content-center text-center>
+          <span> <i [className]="item.icon"  ></i></span>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
